@@ -1,0 +1,42 @@
+<% if current_user %>
+  <h3>Welcome: <%= current_user.email %></h3>
+<% else %>
+  <div class="jumbotron">
+    <h2>Welcome to the Photo Management App!</h2>
+      <p class="lead">
+        You'll love managing your Photos with our application. Sign up!
+      </p>
+  </div>
+  <div class="row">
+    <div class="plans clearfix">
+      <div class="col-lg-3 col-lg-offset-3 plan">
+        <h2>Free Plan</h2>
+          <div class="features">
+            <ul>
+              <li>100 Image Uploads</li>
+              <li>Responsive design</li>
+              <li>Access anywhere</li>
+              <br>
+            </ul>
+          </div>
+          <p>
+            <%= link_to 'Sign Up', new_user_registration_path(:param1 => "free"), class: 'btn btn-primary sign-up', name: 'free' %>
+          </p>
+      </div>
+      <div class="col-lg-3 plan">
+        <h2>Premium Plan</h2>
+          <div class="features">
+            <ul>
+              <li>Unlimited Image Uploads</li>
+              <li>Responsive design</li>
+              <li>Access anywhere</li>
+              <li>Price: $10 </li>
+            </ul>
+          </div>
+          <p>
+            <%= link_to 'Sign Up', new_user_registration_path(:param1 => "paid"), class: 'btn btn-primary sign-up', name: 'paid' %>
+          </p>
+      </div>
+      </div>
+    </div>
+<% end %>
