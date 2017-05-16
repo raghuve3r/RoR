@@ -1,5 +1,5 @@
 <script language="Javascript">
-  Stripe.setPublishableKey("pk_test_2LQDDvqtQfBVJSJEt6jJk9A6");
+  Stripe.setPublishableKey("");
 </script>
 
 <%= bootstrap_devise_error_messages! %>
@@ -50,8 +50,8 @@
             </div>
           </div>
         </div>
-      <% end %>
-        <%= hidden_field_tag(:action, 'paid') %>
+        <% end %>
+        <%= f.hidden_field "plan", value: "paid" %>
         <%= f.submit t('.sign_up', :default => "Sign up"), class: "btn btn-primary" %>
       <% end %>
       <% else %>
@@ -68,7 +68,7 @@
             <%= f.label :password_confirmation %>
             <%= f.password_field :password_confirmation, class: "form-control" %>
           </div>
-          <%= hidden_field_tag(:action, 'free') %>
+          <%= f.hidden_field "plan", value: "free" %>
           <%= f.submit t('.sign_up', :default => "Sign up"), class: "btn btn-primary" %>
         <% end %>
       <% end %>

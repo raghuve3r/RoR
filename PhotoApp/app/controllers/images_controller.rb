@@ -26,6 +26,10 @@ class ImagesController < ApplicationController
   def create
     @image = Image.new(image_params)
     @image.user = current_user
+    if current_user.plan == "free" and current_user.images.count > 9
+      flash[:error] = "Cannot upload more than 10 images for free account"
+      render :new and return
+    end
 
     respond_to do |format|
       if @image.save

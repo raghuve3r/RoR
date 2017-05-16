@@ -125,12 +125,3 @@ if [ -x /usr/bin/mint-fortune ]; then
 fi
 
 # added by Anaconda3 4.2.0 installer
-export PATH="/home/rkanchib/Python/anaconda3/bin:$PATH"
-export SENDGRID_USERNAME = ""
-export SENDGRID_PASSWORD = ""
-export STRIPE_TEST_SECRET_KEY = ""
-export STRIPE_TEST_PUBLISHABLE_KEY = ""
-source /usr/local/share/chruby/chruby.sh
-source /usr/local/share/chruby/auto.sh
-source /usr/local/share/chruby/chruby.sh
-source /usr/local/share/chruby/auto.sh
